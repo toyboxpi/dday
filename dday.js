@@ -1,5 +1,5 @@
 function calculateDday() {
-    const startDate = new Date("2024-09-01"); // 시작 날짜
+    const startDate = new Date("2024-09-11"); // 시작 날짜
     const now = new Date(); // 현재 시간
 
     // 한국 시간으로 변환 (UTC+9 기준)
