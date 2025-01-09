@@ -1,5 +1,27 @@
-    <!-- D-Day 결과를 표시할 영역 -->
-    <span style="font-size: 60px;" id="dDayCounter">방송 0일차</span>
+<style>
+    @font-face {
+        font-family: 'freesensation';
+        src: url('https://toyboxpi.github.io/dday/fonts/Freesetation-9Black.ttf') format('truetype');
+    }
 
-    <!-- JavaScript 파일 불러오기 -->
-    <script src="dday.js"></script>
+    #ddayContainer {
+        font-size: 60px;
+        font-family: 'freesensation', sans-serif;
+        font-weight: bold;
+        text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+    }
+</style>
+
+<div id="ddayContainer">Loading...</div>
+
+<script>
+    fetch("https://toyboxpi.github.io/dday/dday.html")
+        .then(response => response.text())
+        .then(html => {
+            document.getElementById("ddayContainer").innerHTML = html;
+        })
+        .catch(error => {
+            console.error("Error loading D-Day content:", error);
+            document.getElementById("ddayContainer").textContent = "Failed to load D-Day content.";
+        });
+</script>
