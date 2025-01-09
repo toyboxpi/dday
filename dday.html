@@ -1,27 +1,21 @@
 <style>
     @font-face {
-        font-family: 'freesensation';
-        src: url('https://toyboxpi.github.io/dday/fonts/Freesetation-9Black.ttf') format('truetype');
+        font-family: 'Freesensation';
+        src: url('https://toyboxpi.github.io/dday/fonts/Freesentation-9Black.ttf') format('truetype');
     }
 
-    #ddayContainer {
-        font-size: 60px;
-        font-family: 'freesensation', sans-serif;
-        font-weight: bold;
-        text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+    #dDayCounter {
+        font-size: 60px; /* 글자 크기 */
+        font-family: 'Freesensation', sans-serif; /* Freesensation 폰트 */
+        font-weight: bold; /* 굵은 글씨 */
+        text-shadow: 
+            -1px -1px 0 #000, /* 왼쪽 위 */
+            1px -1px 0 #000,  /* 오른쪽 위 */
+            -1px 1px 0 #000,  /* 왼쪽 아래 */
+            1px 1px 0 #000;   /* 오른쪽 아래 */
     }
 </style>
 
-<div id="ddayContainer">Loading...</div>
+<span id="dDayCounter">방송 0일차</span>
 
-<script>
-    fetch("https://toyboxpi.github.io/dday/dday.html")
-        .then(response => response.text())
-        .then(html => {
-            document.getElementById("ddayContainer").innerHTML = html;
-        })
-        .catch(error => {
-            console.error("Error loading D-Day content:", error);
-            document.getElementById("ddayContainer").textContent = "Failed to load D-Day content.";
-        });
-</script>
+<script src="dday.js"></script>
