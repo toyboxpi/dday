@@ -1,4 +1,4 @@
-(function () {
+document.addEventListener("DOMContentLoaded", function () {
   function getRandomLottoNumbers() {
     const numbers = [];
     while (numbers.length < 7) {
@@ -16,6 +16,6 @@
   if (el) {
     const lotto = getRandomLottoNumbers();
     el.textContent = `${lotto.main.join(", ")} + ${lotto.bonus}`;
-    el.style.visibility = "visible"; // 로딩 중 감추기 처리 시 유용
+    el.style.visibility = "visible";
   }
-})();
+});
